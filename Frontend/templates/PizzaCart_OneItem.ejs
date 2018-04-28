@@ -1,19 +1,21 @@
-<div>
-    <div class="name">Impresa (small_size)</div>
+<div class="cart_item">
+    <div class="name"><%=pizza.title%> (<%=size%>) </div>
     <div class="size">
         <div class="diametr">
-            <span class="glyphicon glyphicon-ban-circle iconSmall" aria-hidden="true"></span>30
+            <img class="ui right spaced avatar image" src="assets/images/size-icon.svg">
+            <%=pizza[size].size%>
         </div>
         <div class="weight">
-            <span class="glyphicon glyphicon-modal-window iconSmall">500</span>
+            <img class="ui right spaced avatar image" src="assets/images/weight.svg">
+            <%=pizza[size].weight%>
         </div>
     </div>
     <div class="correct_pizza">
-        <div class="price">1 UAH</div>
+        <div class="price">Ціна: <%= pizza[size].price %> грн.</div>
         <div class="minus">
             <button>-</button>
         </div>
-        <div class="count">2</div>
+        <div class="count"><%=quantity%></div>
         <div class="plus">
             <button>+</button>
 

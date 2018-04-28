@@ -38,11 +38,13 @@ function getIngredientsArray(pizza) {
         <div class="row">
 
             <div class="col-xs-6" style="text-align: center">
-                30
+                <%=pizza.small_size.size%>
+                <img class="ui right spaced avatar image" src="assets/images/size-icon.svg">
             </div>
 
             <div class="col-xs-6" style="text-align: center">
-                40
+                <%=pizza.big_size.size%>
+                <img class="ui right spaced avatar image" src="assets/images/size-icon.svg">
             </div>
 
         </div>
@@ -51,11 +53,13 @@ function getIngredientsArray(pizza) {
         <div class="row">
 
             <div class="col-xs-6" style="text-align: center">
-                300
+                <%=pizza.small_size.weight%>
+                <img class="ui right spaced avatar image" src="assets/images/weight.svg">
             </div>
 
             <div class="col-xs-6" style="text-align: center">
-                400
+                <%=pizza.big_size.weight%>
+                <img class="ui right spaced avatar image" src="assets/images/weight.svg">
             </div>
 
         </div>
@@ -65,11 +69,11 @@ function getIngredientsArray(pizza) {
         <div class="row">
 
             <div class="col-xs-6" style="text-align: center">
-                107
+                <%=pizza.small_size.price%>
             </div>
 
             <div class="col-xs-6" style="text-align: center">
-                201
+                <%=pizza.big_size.price%>
             </div>
 
         </div>
@@ -92,11 +96,11 @@ function getIngredientsArray(pizza) {
         <div class="row">
 
             <div class="col-xs-6" style="text-align: center">
-                <button class="btn btn-primary buy-small">Button 2</button>
+                <button class="btn btn-primary buy-small">Мала</button>
             </div>
 
             <div class="col-xs-6" style="text-align: center">
-                <button class="btn btn-default buy-big">Button 1</button>
+                <button class="btn btn-default buy-big">Велика</button>
             </div>
 
         </div>
