@@ -1,0 +1,104 @@
+<%
+
+function getIngredientsArray(pizza) {
+    //Отримує вміст піци
+    var content = pizza.content;
+    var result = [];
+
+    //Object.keys повертає масив ключів в об’єкті JavaScript
+
+    Object.keys(content).forEach(function(key){
+
+        //a.concat(b) створює спільний масив із масивів a та b
+        result = result.concat(content[key]);
+    });
+
+    return result;
+}
+
+   %>
+<div class="col-md-6 col-lg-4 pizza-card">
+    <div class="thumbnail">
+        <img class="pizza-icon" src="<%= pizza.icon %>" alt="Pizza">
+
+        <% if(pizza.is_new) { %>
+        <span class="label label-danger">Нова</span>
+        <% } else if(pizza.is_popular) {%>
+        <span class="label label-success">Популярна</span>
+        <% } %>
+
+        <div class="caption">
+            <span class="title"><%= pizza.title %></span>
+            <div class="type"><%= pizza.type %></div>
+            <div class="description">
+                <%= getIngredientsArray(pizza).join(", ") %>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-xs-6" style="text-align: center">
+                30
+            </div>
+
+            <div class="col-xs-6" style="text-align: center">
+                40
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-xs-6" style="text-align: center">
+                300
+            </div>
+
+            <div class="col-xs-6" style="text-align: center">
+                400
+            </div>
+
+        </div>
+
+
+
+        <div class="row">
+
+            <div class="col-xs-6" style="text-align: center">
+                107
+            </div>
+
+            <div class="col-xs-6" style="text-align: center">
+                201
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-xs-6" style="text-align: center">
+                ГРН
+            </div>
+
+            <div class="col-xs-6" style="text-align: center">
+                ГРН
+            </div>
+
+        </div>
+
+
+
+        <div class="row">
+
+            <div class="col-xs-6" style="text-align: center">
+                <a href="#" class="btn btn-primary">Button 2</a>
+            </div>
+
+            <div class="col-xs-6" style="text-align: center">
+                <a href="#" class="btn btn-default">Button 1</a>
+            </div>
+
+        </div>
+    </div>
+</div>

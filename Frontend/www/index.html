@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Pizza</title>
+
+    <!-- Bootsrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- LESS основний файл -->
+    <link rel="stylesheet/less" type="text/css" href="assets/less/main.less"/>
+    <!-- LESS JavaScript компілятор -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="pizzaKMA">
+<span>Pizza</span>
+<span>KMA</span>
+</div>
+
+
+<div class="discount">
+    <span>Discount</span>
+    <span>20% On Evrything</span>
+</div>
+
+
+
+<div class="header">
+
+    <div class="toptop">
+        <span class="contact_number"> (044) 222 5222 </span>
+        <span class="working_time"> 24 години/7 днів </span>
+        <span class="free_pizza"> Безкоштовна доставка піци </span>
+        <div class="enter_button">
+            <button>Війти</button>
+        </div>
+
+    </div>
+
+    <div class="lowtop">
+        Піца
+
+    </div>
+
+</div>
+
+
+<div id="cart">
+    <div class="orders">
+        <div class="order_text">
+            <div class="text">Замовлення
+                <div class="order_amount">1</div>
+            </div>
+        </div>
+        <div class="clear_orders">Очистити замовлення</div>
+    </div>
+
+    <div class="cart_item">
+        <div class="name">Impresa (small_size)</div>
+        <div class="size">
+            <div class="diametr">
+                <span class="glyphicon glyphicon-ban-circle iconSmall" aria-hidden="true"></span>30
+            </div>
+            <div class="weight">
+                <span class="glyphicon glyphicon-modal-window iconSmall">500</span>
+            </div>
+        </div>
+        <div class="correct_pizza">
+            <div class="price">1 UAH</div>
+            <div class="minus">
+                <button>-</button>
+            </div>
+            <div class="count">2</div>
+            <div class="plus">
+                <button>+</button>
+
+            </div>
+            <div class="delete">
+                <button>x</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="final">
+        <div class="sum_orders">
+            <div class="sum">Сума замовлення</div>
+            <span class="counter">2</span>
+        </div>
+
+        <button>Замовити</button>
+
+    </div>
+
+</div>
+
+
+<div class="container">
+    <div class="all_pizzas">
+        <span class="pizzas_all">Усі піци</span>
+        <span class="amount">666</span>
+    </div>
+
+    <div class="navigation">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">All</a></li>
+            <li role="presentation"><a href="#">Meat</a></li>
+            <li role="presentation"><a href="#">Mushroom</a></li>
+            <li role="presentation"><a href="#">Ocean</a></li>
+            <li role="presentation"><a href="#">Vegan</a></li>
+        </ul>
+    </div>
+
+    <div class="row" id="pizza_list">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail pizza-card">
+                <img src="assets/images/pizza_1.jpg">
+
+                <div class="caption" style="text-align: center"><h3>IMPRESA</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                        at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                             30
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            40
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            300
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            400
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            107
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            201
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                           ГРН
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                          ГРН
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            <a href="#" class="btn btn-primary">Button 2</a>
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            <a href="#" class="btn btn-default">Button 1</a>
+                        </div>
+
+                </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail pizza-card">
+                <img src="assets/images/pizza_2.jpg">
+
+                <div class="caption" style="text-align: center"><h3>BBQ</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                        at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            30
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            40
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            300
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            400
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            107
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            201
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            ГРН
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            ГРН
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            <a href="#" class="btn btn-primary">Button 2</a>
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            <a href="#" class="btn btn-default">Button 1</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail pizza-card">
+                <img src="assets/images/pizza_3.jpg">
+
+                <div class="caption" style="text-align: center"><h3>MARGARET</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                        at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            30
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            40
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            300
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            400
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            107
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            201
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            ГРН
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            ГРН
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div class="col-xs-6" style="text-align: center">
+                            <a href="#" class="btn btn-primary">Button 2</a>
+                        </div>
+
+                        <div class="col-xs-6" style="text-align: center">
+                            <a href="#" class="btn btn-default">Button 1</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="Footer">
+    <span class="text_center">Це футер Це футер  Це футер Це футер Це футер Це футер Це футер Це футер Це футер Це футер Це футер Це футер Це футер Це футер Це футер </span>
+
+</footer>
+
+
+<!-- jQuery JavaScript -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!--Bootsrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!--Own JavaScript -->
+<script type="text/javascript"  src="assets/js/main.js"> </script>
+</body>
+</html>
+//changes
