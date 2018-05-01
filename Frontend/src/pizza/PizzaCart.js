@@ -4,21 +4,21 @@
 var Templates = require('../Templates');
 
 //Перелік розмірів піци
-var PizzaSize = {
+var sizeOfPizza = {
     Big: "big_size",
     Small: "small_size"
 };
 
 //Змінна в якій зберігаються перелік піц в кошику
-var Cart = [];
+var alreadyChoosed = [];
 
 //HTML едемент куди будуть додаватися піци
-var $cart = $(".cart_items");
+var $choosedAlreade = $(".cart_items");
 
 function addToCart(pizza, size) {
 
     var hasPizza = false;
-    Cart.forEach(function (item) {
+    alreadyChoosed.forEach(function (item) {
         if((item.pizza.id===pizza.id)&&(item.size===size)){
             hasPizza=true;
             item.quantity+=1;
@@ -30,7 +30,7 @@ function addToCart(pizza, size) {
 
     //Приклад реалізації, можна робити будь-яким іншим способом
     if(hasPizza===false) {
-        Cart.push({
+        alreadyChoosed.push({
             pizza: pizza,
             size: size,
             quantity: 1
@@ -44,8 +44,8 @@ function addToCart(pizza, size) {
 function removeFromCart(cart_item) {
     //Видалити піцу з кошика
     //TODO: треба зробити
-    for (var i = 0; i < Cart.length; i++) {
-        if(Cart[i].pizza.id===cart_item.pizza.id&&Cart[i].size===cart_item.size)Cart.splice(i,1);
+    for (var i = 0; i < alreadyChoosed.length; i++) {
+        if(alreadyChoosed[i].pizza.id===cart_item.pizza.id&&alreadyChoosed[i].size===cart_item.size)alreadyChoosed.splice(i,1);
     }
 
     //Після видалення оновити відображення
@@ -56,13 +56,22 @@ function initialiseCart() {
     //Фукнція віпрацьвуватиме при завантаженні сторінки
     //Тут можна наприклад, зчитати вміст корзини який збережено в Local Storage то показати його
     //TODO: ...
+    var $money = $(".count");
+    alreadyChoosed = JSON.parse(localStorage.getItem("pizzas"));
+    if(alreadyChoosed===null){
+        alreadyChoosed=[];
+    }
+    var sum = 0;
+    alreadyChoosed.forEach(function (value) {
+        sum+=value.pizza[value.size].price*value.quantity });
+    $money.text(sum);
 
     updateCart();
 }
 
 function getPizzaInCart() {
     //Повертає піци які зберігаються в кошику
-    return Cart;
+    return alreadyChoosed;
 }
 
 function updateCart() {
@@ -73,7 +82,7 @@ function updateCart() {
     //Тут можна наприклад показати оновлений кошик на екрані та зберегти вміт кошика в Local Storage
 
     //Очищаємо старі піци в кошику
-    $cart.html("");
+    $choosedAlreade.html("");
 
     //Онволення однієї піци
     function showOnePizzaInCart(cart_item) {
@@ -114,11 +123,14 @@ function updateCart() {
 
         sum+=cart_item.pizza[cart_item.size].price*cart_item.quantity;
         orderAmount+=1;
-        $cart.append($node);
+        $choosedAlreade.append($node);
 
     }
 
-    Cart.forEach(showOnePizzaInCart);
+    localStorage.clear();
+    localStorage.setItem("pizzas", JSON.stringify(alreadyChoosed));
+
+    alreadyChoosed.forEach(showOnePizzaInCart);
     $(".counter").text(sum);
     $(".order_amount").text(orderAmount);
 
@@ -132,4 +144,4 @@ exports.addToCart = addToCart;
 exports.getPizzaInCart = getPizzaInCart;
 exports.initialiseCart = initialiseCart;
 
-exports.PizzaSize = PizzaSize;
+exports.PizzaSize = sizeOfPizza;
