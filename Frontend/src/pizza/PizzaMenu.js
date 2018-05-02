@@ -3,7 +3,15 @@
  */
 var Templates = require('../Templates');
 var PizzaCart = require('./PizzaCart');
-var Pizza_List = require('../Pizza_List');
+var API = require('../API');
+var Pizza_List  = null;
+
+API.getPizzaList(function (err,pizzaList) {
+    if(err)alert("Failed to load pizzas");
+    else{
+        Pizza_List = pizzaList;
+    }
+});
 
 //HTML едемент куди будуть додаватися піци
 var $pizza_list = $("#pizza_list");
@@ -22,7 +30,6 @@ function showPizzaList(list) {
             PizzaCart.addToCart(pizza, PizzaCart.PizzaSize.Big);
         });
         $node.find(".buy-small").click(function(){
-
             PizzaCart.addToCart(pizza, PizzaCart.PizzaSize.Small);
         });
 
@@ -37,17 +44,30 @@ function filterPizza(filter) {
     var pizza_shown = [];
 
     Pizza_List.forEach(function(pizza){
-        //Якщо піка відповідає фільтру
-        //pizza_shown.push(pizza);
 
-        //TODO: зробити фільтри
+        if(filter === "all") pizza_shown.push(pizza);
+
+        if(filter === "meat")
+            if("meat" in pizza.content || "chicken" in pizza.content) pizza_shown.push(pizza);
+
+        if(filter === "mushroom")
+            if("mushroom" in pizza.content) pizza_shown.push(pizza);
+
+        if(filter === "pineapple")
+            if("pineapple" in pizza.content) pizza_shown.push(pizza);
+
+        if(filter === "ocean")
+            if("ocean" in pizza.content) pizza_shown.push(pizza);
+
+        if(filter === "vegan")
+            if(!"meat" in pizza.content && !"chicken" in pizza.content && !"ocean" in pizza.content) pizza_shown.push(pizza);
     });
 
-    //Показати відфільтровані піци
+
     showPizzaList(pizza_shown);
 }
 
-function initialiseMenu() {
+function initialiseMenu(Pizza_List) {
     //Показуємо усі піци
     showPizzaList(Pizza_List)
 }
